@@ -1,0 +1,10 @@
+FROM tomcat:9.0
+
+LABEL maintainer=”java.developer@gmx.com”
+
+ADD ./target/calculator.access.ui.web.jsp.war /usr/local/tomcat/webapps/app.calculator.web.jsp.war
+
+EXPOSE 8080
+
+CMD chmod +x /usr/local/tomcat/bin/catalina.sh
+CMD ["catalina.sh", "run"]
